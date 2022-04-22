@@ -27,5 +27,10 @@ public class Contact {
 
     public void setPhoneNum(Long phoneNum) {
         this.phoneNum = phoneNum;
+
     }
+
+//    public list showContacts(contactRoster){
+//
+//    }
 }
