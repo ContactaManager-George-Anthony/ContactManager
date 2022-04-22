@@ -8,6 +8,7 @@ public class Contact {
 
     // constructor
     public Contact(String name, Long phoneNum) {
+
         this.name = name;
         this.phoneNum = phoneNum;
     }
