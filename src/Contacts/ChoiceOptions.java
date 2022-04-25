@@ -5,17 +5,22 @@ import java.util.Scanner;
 
 public class ChoiceOptions {
     public static void selectOptions(int userChoice, HashMap<String, Contact> contacts) {
+        Contact contact1 = new Contact("Roads", "Megan",  "932442343");
+        Contact contact2 = new Contact("Bullock", "Bob",  "345867530");
+        contacts.put("roads", contact1);
+        contacts.put("bob", contact2);
 //        Scanner scanner = new Scanner(System.in);
         if (userChoice == 1) {
             System.out.println("Name         Phone#");
+            System.out.println("-----------------------------------");
             for (Contact contact : contacts.values()) {
                 System.out.println(
                         contact.getFirstName() + "" +
                                 " " +
-                                contact.getLastName() + "  " +
+                                contact.getLastName() + " | " +
                                 contact.getPhoneNum());
             }
-//            System.out.println("Name    | Phone number |\n" + "-----------------------\n");
+            System.out.println("-----------------------------------");
         } else if (userChoice == 2) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Please enter a first name: ");
@@ -26,6 +31,21 @@ public class ChoiceOptions {
             String phoneNum = scanner.next();
             Contact contact = new Contact(lastName, firstName, phoneNum);
             contacts.put(contact.getLastName(), contact);
+
+            for (Contact contactInfo : contacts.values()) {
+                System.out.println(contactInfo.getFirstName());
+                System.out.println(contactInfo.getLastName());
+                System.out.println(contactInfo.getPhoneNum());
+            }
+        }else if (userChoice == 3){
+            addSearch.searchContacts(contacts);
+
+
+            }
+//            System.out.println(selectOptions());
+//
+//            selectOptions(int userChoice, HashMap<String, Contact> contacts)
+
         }
     }
-}
+
