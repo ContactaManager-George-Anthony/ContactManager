@@ -40,12 +40,14 @@ public class ChoiceOptions {
         }else if (userChoice == 3){
             addSearch.searchContacts(contacts);
 
+        } else if (userChoice == 4) {
+            System.out.println("Delete an existing contact.\n");
 
-            }
-//            System.out.println(selectOptions());
+        } else if (userChoice == 5) {
+//                            System.out.println(selectOptions());
 //
 //            selectOptions(int userChoice, HashMap<String, Contact> contacts)
-
+            }
         }
     }
 
