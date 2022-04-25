@@ -1,4 +1,4 @@
-package Contacts;//package Contacts;
+//package Contacts;
 //import java.util.Scanner;
 //
 //public class AddContact {

@@ -2,34 +2,47 @@ package Contacts;
 
 public class Contact {
     // fields
-    private String name;
+    private String lastName;
 
-    private Long phoneNum;
+    private String firstName;
+
+    private String phoneNum;
 
     // constructor
-    public Contact(String name, Long phoneNum) {
+    public Contact(String lastName,String firstName, String phoneNum) {
+        this.lastName = lastName;
 
-        this.name = name;
+        this.firstName = firstName;
+
         this.phoneNum = phoneNum;
     }
 
     // getters and setters
-    public String getName() {
-        return name;
+
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Long getPhoneNum() {
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getPhoneNum() {
         return phoneNum;
     }
 
-    public void setPhoneNum(Long phoneNum) {
+    public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
-
     }
+
 
 //    public list showContacts(contactRoster){
 //
