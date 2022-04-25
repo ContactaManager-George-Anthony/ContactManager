@@ -1,5 +1,6 @@
-//package Contacts;
-//import java.util.Scanner;
+package Contacts;
+
+import java.util.HashMap;
 //
 //public class AddContact {
 //    public static String  addContact() {

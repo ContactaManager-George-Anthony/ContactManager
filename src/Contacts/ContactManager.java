@@ -27,11 +27,6 @@ public class ContactManager {
         ChoiceOptions userSelectsOption = new ChoiceOptions();
         userSelectsOption.selectOptions(option, contactsHashMap);
 
-        for (Contact contact : contactsHashMap.values()) {
-            System.out.println(contact.getFirstName());
-            System.out.println(contact.getLastName());
-            System.out.println(contact.getPhoneNum());
-        }
 
 
 //        String firstNameInput = scanner.next();
