@@ -11,9 +11,9 @@ public class ChoiceOptions {
             for (Contact contact : contacts.values()) {
                 System.out.println(
                         contact.getFirstName() + "" +
-                        " " +
-                        contact.getLastName() + "  " +
-                        contact.getPhoneNum());
+                                " " +
+                                contact.getLastName() + "  " +
+                                contact.getPhoneNum());
             }
 //            System.out.println("Name    | Phone number |\n" + "-----------------------\n");
         } else if (userChoice == 2) {
