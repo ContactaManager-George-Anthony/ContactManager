@@ -7,7 +7,7 @@ public class ContactManager {
 
     public static void main(String[] args) {
         // creates a new hashmap
-        HashMap contactsHashmap = new HashMap();
+        HashMap<String, Contact> contactsHashMap = Hashmap.createHashMap();
 
         // Makes a new menu
         Menu contactMenu = new Menu();
@@ -25,7 +25,14 @@ public class ContactManager {
         System.out.println("Please select a number");
         int option = scanner.nextInt();
         ChoiceOptions userSelectsOption = new ChoiceOptions();
-        userSelectsOption.selectOptions(option, contactsHashmap);
+        userSelectsOption.selectOptions(option, contactsHashMap);
+
+        for (Contact contact : contactsHashMap.values()) {
+            System.out.println(contact.getFirstName());
+            System.out.println(contact.getLastName());
+            System.out.println(contact.getPhoneNum());
+        }
+
 
 //        String firstNameInput = scanner.next();
 

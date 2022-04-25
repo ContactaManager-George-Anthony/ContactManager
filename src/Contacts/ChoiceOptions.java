@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class ChoiceOptions {
-    public static void selectOptions(int userChoice, HashMap<Integer, Contact> contacts) {
+    public static void selectOptions(int userChoice, HashMap<String, Contact> contacts) {
 //        Scanner scanner = new Scanner(System.in);
         if (userChoice == 1) {
             System.out.println("Name         Phone#");
@@ -25,6 +25,7 @@ public class ChoiceOptions {
             System.out.println("Please enter a phone number: ");
             String phoneNum = scanner.next();
             Contact contact = new Contact(lastName, firstName, phoneNum);
+            contacts.put(contact.getLastName(), contact);
         }
     }
 }

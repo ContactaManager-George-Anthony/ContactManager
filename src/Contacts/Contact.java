@@ -43,8 +43,4 @@ public class Contact {
         this.phoneNum = phoneNum;
     }
 
-
-//    public list showContacts(contactRoster){
-//
-//    }
 }
