@@ -1,5 +1,7 @@
 package Contacts;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -18,21 +20,33 @@ public class ContactManager {
         // Creates new scanner object
         Scanner scanner = new Scanner(System.in);
 
+        //scanner
+        Scanner inFile = null;
+
+        try {
+            inFile = new Scanner(new File("words.txt"));
+            while (inFile.hasNextLine()) {
+                String line = inFile.nextLine();
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+
+
 //        Contact contact1 = new Contact("Roads", "Megan", (long) (932442343));
 //        Contact contact2 = new Contact("Bullock", "Bob", (long) (345867530));
 //        contactsHashmap.put(contact1.getLastName() + ", " + contact1.getFirstName(), contact1);
 //        contactsHashmap.put(contact2.getLastName() + ", " + contact2.getFirstName(), contact2);
 
-        System.out.println("Please select a number");
-        int option = scanner.nextInt();
-        ChoiceOptions userSelectsOption = new ChoiceOptions();
-        userSelectsOption.selectOptions(option, contactsHashMap);
-
+            System.out.println("Please select a number");
+            int option = scanner.nextInt();
+            ChoiceOptions userSelectsOption = new ChoiceOptions();
+            userSelectsOption.selectOptions(option, contactsHashMap);
 
 
 //        String firstNameInput = scanner.next();
 
-    }
+        }
 
 //    public static String printMenu() {
 //        String menu = "1. View contacts." +
@@ -57,4 +71,5 @@ public class ContactManager {
 //            System.out.println("\n Enter the phone number of your new contact\n");
 //        }
 //    }
+    }
 }
