@@ -9,7 +9,7 @@ public class Contact {
     private String phoneNum;
 
     // constructor
-    public Contact(String lastName,String firstName, String phoneNum) {
+    public Contact(String lastName, String firstName, String phoneNum) {
         this.lastName = lastName;
 
         this.firstName = firstName;
@@ -19,9 +19,8 @@ public class Contact {
 
     // getters and setters
 
-    public String getLastName() {
-        return lastName;
-    }
+
+    public String getLastName() { return lastName; }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
