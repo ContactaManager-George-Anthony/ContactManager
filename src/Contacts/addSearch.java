@@ -15,18 +15,23 @@ public class addSearch {
 
         for (Contact contactInfo : contactList) {
             String fullname = contactInfo.getFirstName() + " " + contactInfo.getLastName();
-            while (inputSearch.equalsIgnoreCase(fullname) || inputSearch.equalsIgnoreCase(contactInfo.getPhoneNum())) {
+            if (inputSearch.equalsIgnoreCase(fullname) || inputSearch.equalsIgnoreCase(contactInfo.getPhoneNum())) {
                 System.out.println(
                         contactInfo.getFirstName() + "" +
                                 " " +
                                 contactInfo.getLastName() + " | " +
                                 contactInfo.getPhoneNum());
-                isPresent = true;
                 break;
             }
-            if (!isPresent) {
-                System.out.println("no contacts with that name found");
-            }
+
+//            while (inputSearch.equalsIgnoreCase(fullname) || inputSearch.equalsIgnoreCase(contactInfo.getPhoneNum())) {
+//
+//                isPresent = true;
+//
+//            }
+//            if (!isPresent) {
+//                System.out.println("no contacts with that name found");
+//            }
         }
         ExitProgramandWrite.exitProgram(newPath, contactList);
     }
