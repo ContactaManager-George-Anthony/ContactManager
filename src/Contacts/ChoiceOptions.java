@@ -1,9 +1,8 @@
 package Contacts;
-
 import java.nio.file.Path;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+
 
 public class ChoiceOptions {
     public static void selectOptions(int userChoice, List<Contact> contactList) {
@@ -65,9 +64,11 @@ public class ChoiceOptions {
                 addSearch.searchContacts(contactList);
 
             } else if (userChoice == 4) {
-                System.out.println("Delete an existing contact.\n");
+            DeleteFile.deleteContact(contactList);
+
 
             } else if (userChoice == 5) {
+            DeleteFile.exit();
 //                            System.out.println(selectOptions());
 //
 //            selectOptions(int userChoice, HashMap<String, Contact> contacts)
