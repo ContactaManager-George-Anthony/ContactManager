@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class addSearch {
-    public static void searchContacts(List<Contact> contactList, Path newPath) {
+    public static void searchContacts(Path newPath, List<Contact> contactList) {
 
         Scanner scanner = new Scanner(System.in);
         boolean isPresent = false;
@@ -36,7 +36,7 @@ public class addSearch {
             FileHelper.tryWriteFile(newPath, contactList);
             System. exit(0);
         }
-//        System.out.println("not found");
+        ExitProgramandWrite.exitProgram(newPath, contactList);
     }
 }
 //        while (isPresent == true);

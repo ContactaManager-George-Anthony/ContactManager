@@ -9,13 +9,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DeleteContact {
-    public static void deleteContact(List<Contact> contactList) {
+    public static void deleteContact(Path newPath, List<Contact> contactList) {
         System.out.println("4. Delete contacts by name and/or phone number. ");
         System.out.print(" Name or Number: ");
         Scanner myScanner = new Scanner(System.in);
         String searchedNameOrphNum = myScanner.nextLine();
-        System.out.println("Name         Phone#");
-        System.out.println("-----------------------------------");
         List<Contact> toRemove = new ArrayList<>();
         for (Contact currentContact : contactList) {
             String fullName = currentContact.getFirstName() + " " + currentContact.getLastName();
@@ -25,21 +23,20 @@ public class DeleteContact {
         }
         contactList.removeAll(toRemove);
 
-
-        for (Contact contact : contactList) {
-            System.out.println(
-                    contact.getFirstName() + "" +
-                            " " +
-                            contact.getLastName() + " | " +
-                            contact.getPhoneNum());
-        }
-        System.out.println("Would you like to do anything else?");
-        String continueProgram = myScanner.nextLine();
-        if (continueProgram.equalsIgnoreCase("yes")) {
-            ChoiceOptions.selectOptions();
+        System.out.println("Would you like to see the updated contact list?");
+        String seeUpdatedList = myScanner.nextLine();
+        if (seeUpdatedList.equalsIgnoreCase("yes")) {
+            for (Contact contact : contactList) {
+                System.out.println(
+                        contact.getFirstName() + "" +
+                                " " +
+                                contact.getLastName() + " | " +
+                                contact.getPhoneNum());
+            }
         } else {
-            System. exit(0);
+            ExitProgramandWrite.exitProgram(newPath, contactList);
         }
+        ExitProgramandWrite.exitProgram(newPath, contactList);
     }
 
 }
