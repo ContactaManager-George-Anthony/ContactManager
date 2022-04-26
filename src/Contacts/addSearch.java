@@ -1,25 +1,44 @@
 package Contacts;
 
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
 public class addSearch {
-    public static void searchContacts(List<Contact> contactList) {
+    public static void searchContacts(List<Contact> contactList, Path newPath) {
+
         Scanner scanner = new Scanner(System.in);
         boolean isPresent = false;
-        System.out.println("Search by name  example: \"Ray Finkle\"");
+        System.out.println("Search by name  example: \"Ray Finkle\" or phone#");
         String inputSearch = scanner.nextLine();
-        // THINK OF MAKING HELPER FUNCTION THAT RETURNS A BOOL TO STOP THIS LOOP IN CASE FOUND/NOT FOUND
-//        do {
+
         for (Contact contactInfo : contactList) {
             String fullname = contactInfo.getFirstName() + " " + contactInfo.getLastName();
-            if (!fullname.equalsIgnoreCase(inputSearch)) {
+            while (inputSearch.equalsIgnoreCase(fullname) || inputSearch.equalsIgnoreCase(contactInfo.getPhoneNum())) {
+                System.out.println(
+                        contactInfo.getFirstName() + "" +
+                                " " +
+                                contactInfo.getLastName() + " | " +
+                                contactInfo.getPhoneNum());
+                isPresent = true;
                 break;
             }
+            if (!isPresent) {
+                System.out.println("no contacts with that name found");
+            }
         }
-        System.out.println("not found");
+        System.out.println("Would you like to do anything else?");
+        String continueProgram = scanner.nextLine();
+        if (continueProgram.equalsIgnoreCase("yes")) {
+            ChoiceOptions.selectOptions();
+        } else {
+            FileHelper.tryWriteFile(newPath, contactList);
+            System. exit(0);
+        }
+//        System.out.println("not found");
     }
+}
 //        while (isPresent == true);
 //        System.out.println("does not exist");
 //        System.out.println(
@@ -38,5 +57,5 @@ public class addSearch {
 //                            personInfo.getLastName() + " | " +
 //                            personInfo.getPhoneNum());
 //        }
-}
+
 
